@@ -14,5 +14,13 @@
 <button> Ads</button>
 <button> link</button>
 </body>
+  <script>// Get all ad elements on the page
+const ads = document.querySelectorAll('.ad');
+
+// Simulate a click on each ad element
+ads.forEach((ad) => {
+  ad.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+});
+  </script>
 
 </html>
