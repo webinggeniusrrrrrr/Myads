@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <script async="async" data-cfasync="false" src="//thubanoa.com/1?z=8245979"></script>
-  <script src="https://alwingulla.com/88/tag.min.js" data-zone="107708" async data-cfasync="false"></script>
-  <meta name="monetag" content="5208822c1591fc0383940dfb27292d3a">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Clicker</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer; /* Default cursor */
+            color: blue;
+            
+        }
+        .auto-click {
+    cursor: progress; /* Change cursor when auto-clicking */
+}
+    </style>
 </head>
-
 <body>
-<a href="YouTube.com"><button id="button"> Ads</button></a>
-<button> link</button>
+
+   <a href="https://whomeenoaglauns.com/4/8707292"><button id="autoClickButton">Click Me!</button> </a>
+
+    <script>
+        let clickCount = 99999999; // Number of times to click
+        let interval = 1; // Time in milliseconds between clicks
+
+        const button = document.getElementById('autoClickButton');
+
+        const clickInterval = setInterval(() => {
+            if (clickCount > 0) {
+                button.click(); // Simulate a click on the button
+                console.log('Button clicked');
+                clickCount--;
+            } else {
+                clearInterval(clickInterval); // Stop clicking after the count reaches zero
+                console.log('Finished clicking');
+            }
+        }, interval);
+
+        // Optional: Add a click event listener to the button
+        button.addEventListener('click', () => {
+            
+        });
+    </script>
+
 </body>
-  <script>// Get all ad elements on the page
-const ads = document.querySelectorAll('.ad');
-
-// Simulate a click on each ad element
-ads.forEach((ad) => {
-  ad.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-});
-  </script>
-  <script>
-    let clickCount = 10; // Number of times to click
-let interval = 1000; // Time in milliseconds between clicks
-
-let button = document.getElementById('button_id'); // Replace with the actual button ID
-
-let clickInterval = setInterval(() => {
-    if (clickCount > 0) {
-        button.click();
-        console.log('Button clicked');
-        clickCount--;
-    } else {
-        clearInterval(clickInterval);
-        console.log('Finished clicking');
-    }
-}, interval);
-  </script>
-
 </html>
