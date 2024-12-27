@@ -3,53 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Clicker</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        button {
-            padding: 20px;
-            font-size: 20px;
-            cursor: pointer; /* Default cursor */
-            color: blue;
-            
-        }
-        .auto-click {
-    cursor: progress; /* Change cursor when auto-clicking */
-}
-    </style>
+    <title>Open and Close Link</title>
 </head>
 <body>
+    <button id="openCloseLinkButton">Open and Close Link</button>
 
-   <a href="https://whomeenoaglauns.com/4/8707292"><button id="autoClickButton">Click Me!</button> </a>
-
-    <script>
-        let clickCount = 999999999999; // Number of times to click
-        let interval = 100; // Time in milliseconds between clicks
-
-        const button = document.getElementById('autoClickButton');
-
-        const clickInterval = setInterval(() => {
-            if (clickCount > 0) {
-                button.click(); // Simulate a click on the button
-                console.log('Button clicked');
-                clickCount--;
-            } else {
-                clearInterval(clickInterval); // Stop clicking after the count reaches zero
-                console.log('Finished clicking');
-            }
-        }, interval);
-
-        // Optional: Add a click event listener to the button
-        button.addEventListener('click', () => {
-            
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
+<script>
+  document.getElementById('openCloseLinkButton').addEventListener('click', function() {
+  // Open the link in a new tab
+  const newWindow = window.open('https://www.example.com', '_blank');
+
+  // Check if the new window was successfully opened
+  if (newWindow) {
+    // Set a timeout to close the new window after 3 seconds (3000 milliseconds)
+    setTimeout(function() {
+      newWindow.close();
+    }, 3000);
+  } else {
+    alert('Popup blocked! Please allow popups for this site.');
+  }
+});
+
+// Function to simulate a click on the button
+function simulateClick() {
+  document.getElementById('openCloseLinkButton').click();
+}
+
+// Automatically click the button every 5 seconds (5000 milliseconds)
+setInterval(simulateClick, 2000);
+</script>
 </html>
