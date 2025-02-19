@@ -34,4 +34,18 @@ function simulateClick() {
 // Automatically click the button every 5 seconds (5000 milliseconds)
 setInterval(simulateClick, 3000);
 </script>
+<script>
+     
+        // Check if Service Workers and Background Sync are supported
+        if ('serviceWorker' in navigator && 'SyncManager' in window) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered:', registration);
+                    return registration.sync.register('background-sync');
+                })
+                .catch(error => console.error('Service Worker registration failed:', error));
+        } else {
+            console.log('Background sync not supported in this browser.');
+        }
+</script>
 </html>
